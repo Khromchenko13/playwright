@@ -5,7 +5,7 @@ agent:
     type: f1-standard-2
     os_image: ubuntu2204
 blocks:
-  - name: Test
+  - name: Build
     task:
       jobs:
         - name: Test
@@ -17,3 +17,28 @@ blocks:
             - npx playwright install --with-deps
             - cache store
             - npx playwright test -j 2
+  - name: Deploy to Dev env
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands: []
+  - name: Run tests
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands: []
+  - name: Deploy to QA Env
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands: []
+  - name: Run e2e tests
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands: []
+  - name: Deploy it
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands: []
